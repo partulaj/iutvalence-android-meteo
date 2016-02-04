@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TP-Meteo</string>
     <string name="action_settings">Settings</string>
+    <string name="txtLibelleStationMainActivity">Station :</string>
+    <string name="txtLatitudeStationMainActivity">Latitude :</string>
+    <string name="txtLongitudeStationMainActivity">Longitude :</string>
+    <string name="txtAltitudeStationMainActivity">Altitude :</string>
 </resources>
