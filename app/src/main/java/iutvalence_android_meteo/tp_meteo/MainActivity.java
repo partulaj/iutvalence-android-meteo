@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
@@ -16,12 +19,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import classes.Station;
 import worker.JSONParser;
 
 public class MainActivity extends AppCompatActivity {
 
     private JSONParser jsonParser = new JSONParser();
     private static final String GET_ONE_STATION = "http://intranet.iut-valence.fr/~partulaj/MesTPs/Casir/TP-Meteo/controller/RequestController.php";
+
+    //Variables représentant les valeurs des TextView
+    private TextView txtValueLibellé, txtValueLongitude, txtValueLatitude, txtValueAltitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +38,28 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Récupération d'une station
-        String test = null;
+        String uneStation = null;
         try {
-            test = new getUser().execute().get();
+            uneStation = new getUser().execute().get();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
+        //Création d'un objet Station à partir du json récupéré
+        Station maStation = new Gson().fromJson(uneStation, Station.class);
+
+        txtValueLibellé = (TextView) findViewById(R.id.txtvalueLibelleStationMainActivity);
+        txtValueLongitude = (TextView) findViewById(R.id.txtvalueLongitudeStationMainActivity);
+        txtValueLatitude = (TextView) findViewById(R.id.txtvalueLatitudeStationMainActivity);
+        txtValueAltitude = (TextView) findViewById(R.id.txtvalueAltitudeMainActivity);
+
+        txtValueLibellé.setText(maStation.getLibellé());
+        txtValueLongitude.setText(maStation.getLongitude());
+        txtValueLatitude.setText(maStation.getLatitude());
+        txtValueAltitude.setText(maStation.getAltitude());
 
     }
 

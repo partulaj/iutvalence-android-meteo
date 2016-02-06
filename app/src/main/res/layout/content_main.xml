@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtLatitudeStationMainActivity"
-        android:id="@+id/xtLatitudeStationMainActivity"
+        android:id="@+id/txtLatitudeStationMainActivity"
         android:layout_below="@+id/txtLibelleStationMainAcitivity"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -35,9 +35,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/xtvalueLatitudeStationMainActivity"
+        android:id="@+id/txtvalueLatitudeStationMainActivity"
         android:text="Nex Text"
-        android:layout_alignTop="@+id/xtLatitudeStationMainActivity"
+        android:layout_alignTop="@+id/txtLatitudeStationMainActivity"
         android:layout_alignLeft="@+id/txtvalueLibelleStationMainActivity"
         android:layout_alignStart="@+id/txtvalueLibelleStationMainActivity" />
 
@@ -46,18 +46,18 @@
         android:layout_height="wrap_content"
         android:text="@string/txtLongitudeStationMainActivity"
         android:id="@+id/txtLongitudeStationMainActivity"
-        android:layout_below="@+id/xtLatitudeStationMainActivity"
+        android:layout_below="@+id/txtLatitudeStationMainActivity"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/xtvalueLongitudeStationMainActivity"
+        android:id="@+id/txtvalueLongitudeStationMainActivity"
         android:text="Nex Text"
         android:layout_alignTop="@+id/txtLongitudeStationMainActivity"
-        android:layout_alignLeft="@+id/xtvalueLatitudeStationMainActivity"
-        android:layout_alignStart="@+id/xtvalueLatitudeStationMainActivity" />
+        android:layout_alignLeft="@+id/txtvalueLatitudeStationMainActivity"
+        android:layout_alignStart="@+id/txtvalueLatitudeStationMainActivity" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,6 +82,6 @@
         android:id="@+id/txtvalueAltitudeMainActivity"
         android:text="Nex Text"
         android:layout_alignTop="@+id/txtAltitudeStationMainActivity"
-        android:layout_alignLeft="@+id/xtvalueLongitudeStationMainActivity"
-        android:layout_alignStart="@+id/xtvalueLongitudeStationMainActivity" />
+        android:layout_alignLeft="@+id/txtvalueLongitudeStationMainActivity"
+        android:layout_alignStart="@+id/txtvalueLongitudeStationMainActivity" />
 </RelativeLayout>
