@@ -15,6 +15,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/txtStationMainActivity"
+        android:id="@+id/txtStationMainAcitivity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueStationMainActivity"
+        android:layout_above="@+id/txtvalueLibelleStationMainActivity"
+        android:layout_alignLeft="@+id/txtvalueLibelleStationMainActivity"
+        android:layout_alignStart="@+id/txtvalueLibelleStationMainActivity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtvalueLibelleStationMainActivity"
         android:layout_alignTop="@+id/txtLibelleStationMainAcitivity"
         android:layout_toRightOf="@+id/txtLibelleStationMainAcitivity"
@@ -61,6 +77,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtLibelleStationMainActivity"
         android:id="@+id/txtLibelleStationMainAcitivity"
+        android:layout_below="@+id/txtStationMainAcitivity"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

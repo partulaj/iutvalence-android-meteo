@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="iutvalence_android_meteo.tp_meteo.ListReleveStationActivity">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvListReleveStationActivity"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtStationListReleveStationActivity"
+        android:id="@+id/txtStationListReleveStationAcitivity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueStationListReleveStationActivity"
+        android:layout_alignTop="@+id/txtStationListReleveStationAcitivity"
+        android:layout_alignLeft="@+id/txtStationListReleveStationAcitivity"
+        android:layout_alignStart="@+id/txtStationListReleveStationAcitivity" />
+
+    <TextView
+        android:id="@+id/txtDateListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtDateListReleveStationActivity"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtStationListReleveStationAcitivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueDateListReleveStationActivity"
+        android:layout_alignTop="@+id/txtDateListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtDateListReleveStationActivity"
+        android:layout_alignStart="@+id/txtDateListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtTempIntListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtTempIntListReleveStationActivity"
+        android:layout_below="@id/txtDateListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueTempIntListReleveStationActivity"
+        android:layout_alignTop="@+id/txtTempIntListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtTempIntListReleveStationActivity"
+        android:layout_alignStart="@+id/txtTempIntListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtTempExtListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtTempExtListReleveStationActivity"
+        android:layout_below="@id/txtTempIntListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueTempExtListReleveStationActivity"
+        android:layout_alignTop="@+id/txtTempExtListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtTempExtListReleveStationActivity"
+        android:layout_alignStart="@+id/txtTempExtListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtPressionListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtPressionListReleveStationActivity"
+        android:layout_below="@id/txtTempExtListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvaluePressionListReleveStationActivity"
+        android:layout_alignTop="@+id/txtPressionListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtPressionListReleveStationActivity"
+        android:layout_alignStart="@+id/txtPressionListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtLuminositeListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtLuminositeListReleveStationActivity"
+        android:layout_below="@id/txtPressionListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueLuminositeListReleveStationActivity"
+        android:layout_alignTop="@+id/txtLuminositeListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtLuminositeListReleveStationActivity"
+        android:layout_alignStart="@+id/txtLuminositeListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtHygrometrieListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtHygrometrieListReleveStationActivity"
+        android:layout_below="@id/txtLuminositeListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueHygrometrieListReleveStationActivity"
+        android:layout_alignTop="@+id/txtHygrometrieListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtHygrometrieListReleveStationActivity"
+        android:layout_alignStart="@+id/txtHygrometrieListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtVitesseVentListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtVitesseVentListReleveStationActivity"
+        android:layout_below="@id/txtHygrometrieListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueVitesseVentListReleveStationActivity"
+        android:layout_alignTop="@+id/txtVitesseVentListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtVitesseVentListReleveStationActivity"
+        android:layout_alignStart="@+id/txtVitesseVentListReleveStationActivity" />
+
+    <TextView
+        android:id="@+id/txtDirectionVentListReleveStationActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@+id/txtDirectionVentListReleveStationActivity"
+        android:layout_below="@id/txtVitesseVentListReleveStationActivity"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvalueDirectionVentListReleveStationActivity"
+        android:layout_alignTop="@+id/txtDirectionVentListReleveStationActivity"
+        android:layout_alignLeft="@+id/txtDirectionVentListReleveStationActivity"
+        android:layout_alignStart="@+id/txtDirectionVentListReleveStationActivity" />
+
+</RelativeLayout>

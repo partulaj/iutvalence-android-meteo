@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,11 +34,23 @@ public class ListStationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_station);
 
-        stationAdapter maListeStation = new stationAdapter();
+        final stationAdapter maListeStation = new stationAdapter();
 
         Log.d("test", maListeStation.toString());
         ListView lv = (ListView) findViewById(R.id.lvListStationActivity);
         lv.setAdapter(maListeStation);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String uneIdStation = maListeStation.getItem(position).getId();
+                Intent intent;
+                intent = new Intent(ListStationActivity.this, ListReleveStationActivity.class);
+                intent.putExtra("id", uneIdStation);
+                startActivity(intent);
+
+            }
+        });
     }
 
     public class getListStationsFromJSON extends AsyncTask<String, String, String> {
@@ -79,7 +92,7 @@ public class ListStationActivity extends AppCompatActivity {
         }
 
         @Override
-        public Object getItem(int position) {
+        public Station getItem(int position) {
             return listeStations.get(position);
         }
 
@@ -95,12 +108,14 @@ public class ListStationActivity extends AppCompatActivity {
                 convertView = inflater.inflate(R.layout.activity_list_station, parent, false);
             }
 
+            TextView txtStation = (TextView) convertView.findViewById(R.id.txtStationListStationActivity);
             TextView txtLibelléStation = (TextView) convertView.findViewById(R.id.txtLibelleStationListStationActivity);
             TextView txtLongitudeStation = (TextView) convertView.findViewById(R.id.txtLongitudeStationListStationActivity);
             TextView txtLatitudeStation = (TextView) convertView.findViewById(R.id.txtLatitudeStationListStationActivity);
             TextView txtAltitudeStation = (TextView) convertView.findViewById(R.id.txtAltitudeStationListStationActivity);
 
             Station uneStation = listeStations.get(position);
+            txtStation.setText(uneStation.getId());
             txtLibelléStation.setText(uneStation.getLibellé());
             txtLongitudeStation.setText(uneStation.getLongitude());
             txtLatitudeStation.setText(uneStation.getLatitude());

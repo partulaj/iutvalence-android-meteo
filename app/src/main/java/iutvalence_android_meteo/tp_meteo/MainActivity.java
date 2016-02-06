@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     //Variables représentant les valeurs des TextView
-    private TextView txtValueLibellé, txtValueLongitude, txtValueLatitude, txtValueAltitude;
+    private TextView txtValueStation, txtValueLibellé, txtValueLongitude, txtValueLatitude, txtValueAltitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +43,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Création d'un objet Station à partir du json récupéré
         Station maStation = new Gson().fromJson(uneStation, Station.class);
 
+        txtValueStation = (TextView) findViewById(R.id.txtvalueStationMainActivity);
         txtValueLibellé = (TextView) findViewById(R.id.txtvalueLibelleStationMainActivity);
         txtValueLongitude = (TextView) findViewById(R.id.txtvalueLongitudeStationMainActivity);
         txtValueLatitude = (TextView) findViewById(R.id.txtvalueLatitudeStationMainActivity);
         txtValueAltitude = (TextView) findViewById(R.id.txtvalueAltitudeMainActivity);
 
+        txtValueStation.setText(maStation.getId());
         txtValueLibellé.setText(maStation.getLibellé());
         txtValueLongitude.setText(maStation.getLongitude());
         txtValueLatitude.setText(maStation.getLatitude());

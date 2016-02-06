@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">TP-Meteo</string>
     <string name="action_settings">Settings</string>
-    <string name="txtLibelleStationMainActivity">Station :</string>
+    <string name="txtStationMainActivity">Station :</string>
+    <string name="txtLibelleStationMainActivity">Libellé :</string>
     <string name="txtLatitudeStationMainActivity">Latitude :</string>
     <string name="txtLongitudeStationMainActivity">Longitude :</string>
     <string name="txtAltitudeStationMainActivity">Altitude :</string>
+
+    <string name="txtStationListReleveStationActivity">Station :</string>
+    <string name="txtDateListReleveStationActivity">Date / Heure :</string>
+    <string name="txtTempIntListReleveStationActivity">Température interne :</string>
+    <string name="txtTempExtListReleveStationActivity">Température externe :</string>
+    <string name="txtPressionListReleveStationActivity">Pression :</string>
+    <string name="txtLuminositeListReleveStationActivity">Luminosité :</string>
+    <string name="txtHygrometrieListReleveStationActivity">Hygrométrie :</string>
+    <string name="txtVitesseVentListReleveStationActivity">Vitesse du vent :</string>
+    <string name="txtDirectionVentListReleveStationActivity">Direction du vent :</string>
 </resources>
