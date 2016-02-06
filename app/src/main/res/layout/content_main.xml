@@ -16,7 +16,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueLibelleStationMainActivity"
-        android:text="Nex Text"
         android:layout_alignTop="@+id/txtLibelleStationMainAcitivity"
         android:layout_toRightOf="@+id/txtLibelleStationMainAcitivity"
         android:layout_toEndOf="@+id/txtLibelleStationMainAcitivity"
@@ -36,7 +35,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueLatitudeStationMainActivity"
-        android:text="Nex Text"
         android:layout_alignTop="@+id/txtLatitudeStationMainActivity"
         android:layout_alignLeft="@+id/txtvalueLibelleStationMainActivity"
         android:layout_alignStart="@+id/txtvalueLibelleStationMainActivity" />
@@ -54,7 +52,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueLongitudeStationMainActivity"
-        android:text="Nex Text"
         android:layout_alignTop="@+id/txtLongitudeStationMainActivity"
         android:layout_alignLeft="@+id/txtvalueLatitudeStationMainActivity"
         android:layout_alignStart="@+id/txtvalueLatitudeStationMainActivity" />
@@ -80,7 +77,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueAltitudeMainActivity"
-        android:text="Nex Text"
         android:layout_alignTop="@+id/txtAltitudeStationMainActivity"
         android:layout_alignLeft="@+id/txtvalueLongitudeStationMainActivity"
         android:layout_alignStart="@+id/txtvalueLongitudeStationMainActivity" />
