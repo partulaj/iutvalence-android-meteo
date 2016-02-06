@@ -3,11 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="iutvalence_android_meteo.tp_meteo.ListReleveStationActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".ListReleveStationActivity">
 
     <ListView
         android:layout_width="wrap_content"
@@ -22,8 +19,8 @@
         android:layout_height="wrap_content"
         android:text="@string/txtStationListReleveStationActivity"
         android:id="@+id/txtStationListReleveStationAcitivity"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtTempIntListReleveStationActivity"
+        android:text="@string/txtTempIntListReleveStationActivity"
         android:layout_below="@id/txtDateListReleveStationActivity"
         android:layout_marginTop="27dp" />
 
@@ -72,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtTempExtListReleveStationActivity"
+        android:text="@string/txtTempExtListReleveStationActivity"
         android:layout_below="@id/txtTempIntListReleveStationActivity"
         android:layout_marginTop="27dp" />
 
@@ -89,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtPressionListReleveStationActivity"
+        android:text="@string/txtPressionListReleveStationActivity"
         android:layout_below="@id/txtTempExtListReleveStationActivity"
         android:layout_marginTop="27dp" />
 
@@ -106,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtLuminositeListReleveStationActivity"
+        android:text="@string/txtLuminositeListReleveStationActivity"
         android:layout_below="@id/txtPressionListReleveStationActivity"
         android:layout_marginTop="27dp" />
 
@@ -123,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtHygrometrieListReleveStationActivity"
+        android:text="@string/txtHygrometrieListReleveStationActivity"
         android:layout_below="@id/txtLuminositeListReleveStationActivity"
         android:layout_marginTop="27dp" />
 
@@ -140,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtVitesseVentListReleveStationActivity"
+        android:text="@string/txtVitesseVentListReleveStationActivity"
         android:layout_below="@id/txtHygrometrieListReleveStationActivity"
         android:layout_marginTop="27dp" />
 
@@ -157,7 +154,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@+id/txtDirectionVentListReleveStationActivity"
+        android:text="@string/txtDirectionVentListReleveStationActivity"
         android:layout_below="@id/txtVitesseVentListReleveStationActivity"
         android:layout_marginTop="27dp" />
 

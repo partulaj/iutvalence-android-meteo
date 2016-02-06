@@ -217,10 +217,15 @@ public class JSONParser {
         HttpURLConnection conn = null;
         try {
             if (params != null) {
+                query = "";
                 for (int i = 0; i < params.size(); i++) {
-                    query = String.format(params.get(i) + "=%s", URLEncoder.encode(values.get(i), "UTF-8"));
+                    if (!query.equals("")) {
+                        query += "&";
+                    }
+                    query += String.format(params.get(i) + "=%s", URLEncoder.encode(values.get(i), "UTF-8"));
                 }
             }
+
             if (query != null) {
                 monURL = new URL(url + "?" + query);
             } else {

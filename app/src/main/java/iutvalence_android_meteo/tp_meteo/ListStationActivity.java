@@ -36,7 +36,6 @@ public class ListStationActivity extends AppCompatActivity {
 
         final stationAdapter maListeStation = new stationAdapter();
 
-        Log.d("test", maListeStation.toString());
         ListView lv = (ListView) findViewById(R.id.lvListStationActivity);
         lv.setAdapter(maListeStation);
 
