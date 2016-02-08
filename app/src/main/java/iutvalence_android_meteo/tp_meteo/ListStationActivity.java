@@ -88,6 +88,7 @@ public class ListStationActivity extends AppCompatActivity {
 
     public class stationAdapter extends BaseAdapter {
 
+        stationAdapter ad = this;
         List<Station> listeStations = getStations();
 
         @Override
@@ -136,6 +137,7 @@ public class ListStationActivity extends AppCompatActivity {
                         edit.apply();
                         btnFavori.setImageDrawable(parent.getContext().getResources().getDrawable(R.drawable.ic_favori_off));
                     }
+                    ad.notifyDataSetChanged();
                 }
 
             });
