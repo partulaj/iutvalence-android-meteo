@@ -18,152 +18,155 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtStationListReleveStationActivity"
-        android:id="@+id/txtStationListReleveStationAcitivity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp" />
+        android:id="@+id/txtStationListReleveStationActivity"
+        android:layout_marginTop="15dp"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueStationListReleveStationActivity"
-        android:layout_alignTop="@+id/txtStationListReleveStationAcitivity"
-        android:layout_alignLeft="@+id/txtStationListReleveStationAcitivity"
-        android:layout_alignStart="@+id/txtStationListReleveStationAcitivity" />
+        android:layout_toRightOf="@+id/txtStationListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtStationListReleveStationActivity"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtDateListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtDateListReleveStationActivity"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/txtStationListReleveStationAcitivity"
-        android:layout_marginTop="27dp" />
+        android:layout_below="@id/txtStationListReleveStationActivity"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueDateListReleveStationActivity"
-        android:layout_alignTop="@+id/txtDateListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtDateListReleveStationActivity"
-        android:layout_alignStart="@+id/txtDateListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueStationListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtDateListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtDateListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtTempIntListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtTempIntListReleveStationActivity"
         android:layout_below="@id/txtDateListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueTempIntListReleveStationActivity"
-        android:layout_alignTop="@+id/txtTempIntListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtTempIntListReleveStationActivity"
-        android:layout_alignStart="@+id/txtTempIntListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueDateListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtTempIntListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtTempIntListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtTempExtListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtTempExtListReleveStationActivity"
         android:layout_below="@id/txtTempIntListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueTempExtListReleveStationActivity"
-        android:layout_alignTop="@+id/txtTempExtListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtTempExtListReleveStationActivity"
-        android:layout_alignStart="@+id/txtTempExtListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueTempIntListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtTempExtListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtTempExtListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtPressionListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtPressionListReleveStationActivity"
         android:layout_below="@id/txtTempExtListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvaluePressionListReleveStationActivity"
-        android:layout_alignTop="@+id/txtPressionListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtPressionListReleveStationActivity"
-        android:layout_alignStart="@+id/txtPressionListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueTempExtListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtPressionListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtPressionListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtLuminositeListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtLuminositeListReleveStationActivity"
         android:layout_below="@id/txtPressionListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueLuminositeListReleveStationActivity"
-        android:layout_alignTop="@+id/txtLuminositeListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtLuminositeListReleveStationActivity"
-        android:layout_alignStart="@+id/txtLuminositeListReleveStationActivity" />
+        android:layout_below="@+id/txtvaluePressionListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtLuminositeListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtLuminositeListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtHygrometrieListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtHygrometrieListReleveStationActivity"
         android:layout_below="@id/txtLuminositeListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueHygrometrieListReleveStationActivity"
-        android:layout_alignTop="@+id/txtHygrometrieListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtHygrometrieListReleveStationActivity"
-        android:layout_alignStart="@+id/txtHygrometrieListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueLuminositeListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtHygrometrieListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtHygrometrieListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtVitesseVentListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtVitesseVentListReleveStationActivity"
         android:layout_below="@id/txtHygrometrieListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueVitesseVentListReleveStationActivity"
-        android:layout_alignTop="@+id/txtVitesseVentListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtVitesseVentListReleveStationActivity"
-        android:layout_alignStart="@+id/txtVitesseVentListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueHygrometrieListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtVitesseVentListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtVitesseVentListReleveStationActivity"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtDirectionVentListReleveStationActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="@string/txtDirectionVentListReleveStationActivity"
         android:layout_below="@id/txtVitesseVentListReleveStationActivity"
-        android:layout_marginTop="27dp" />
+        android:layout_marginBottom="15dp"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtvalueDirectionVentListReleveStationActivity"
-        android:layout_alignTop="@+id/txtDirectionVentListReleveStationActivity"
-        android:layout_alignLeft="@+id/txtDirectionVentListReleveStationActivity"
-        android:layout_alignStart="@+id/txtDirectionVentListReleveStationActivity" />
+        android:layout_below="@+id/txtvalueVitesseVentListReleveStationActivity"
+        android:layout_toRightOf="@+id/txtDirectionVentListReleveStationActivity"
+        android:layout_toEndOf="@+id/txtDirectionVentListReleveStationActivity"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp" />
 
 </RelativeLayout>

@@ -96,26 +96,117 @@ public class ListReleveStationActivity extends AppCompatActivity {
                 convertView = inflater.inflate(R.layout.activity_list_releve_station, parent, false);
             }
 
-            TextView txtStationReleve = (TextView) convertView.findViewById(R.id.txtvalueStationListReleveStationActivity);
-            TextView txtDateReleve = (TextView) convertView.findViewById(R.id.txtvalueDateListReleveStationActivity);
-            TextView txtTempIntReleve = (TextView) convertView.findViewById(R.id.txtvalueTempIntListReleveStationActivity);
-            TextView txtTempExtReleve = (TextView) convertView.findViewById(R.id.txtvalueTempExtListReleveStationActivity);
-            TextView txtPressionReleve = (TextView) convertView.findViewById(R.id.txtvaluePressionListReleveStationActivity);
-            TextView txtLuxReleve = (TextView) convertView.findViewById(R.id.txtvalueLuminositeListReleveStationActivity);
-            TextView txtHygroReleve = (TextView) convertView.findViewById(R.id.txtvalueHygrometrieListReleveStationActivity);
-            TextView txtVitVReleve = (TextView) convertView.findViewById(R.id.txtvalueVitesseVentListReleveStationActivity);
-            TextView txtDivVReleve = (TextView) convertView.findViewById(R.id.txtvalueDirectionVentListReleveStationActivity);
+            TextView txtStationReleve = (TextView) convertView.findViewById(R.id.txtStationListReleveStationActivity);
+            TextView txtDateReleve = (TextView) convertView.findViewById(R.id.txtDateListReleveStationActivity);
+            TextView txtTempIntReleve = (TextView) convertView.findViewById(R.id.txtTempIntListReleveStationActivity);
+            TextView txtTempExtReleve = (TextView) convertView.findViewById(R.id.txtTempExtListReleveStationActivity);
+            TextView txtPressionReleve = (TextView) convertView.findViewById(R.id.txtPressionListReleveStationActivity);
+            TextView txtLuxReleve = (TextView) convertView.findViewById(R.id.txtLuminositeListReleveStationActivity);
+            TextView txtHygroReleve = (TextView) convertView.findViewById(R.id.txtHygrometrieListReleveStationActivity);
+            TextView txtVitVReleve = (TextView) convertView.findViewById(R.id.txtVitesseVentListReleveStationActivity);
+            TextView txtDivVReleve = (TextView) convertView.findViewById(R.id.txtDirectionVentListReleveStationActivity);
+
+            TextView txtStationReleveValue = (TextView) convertView.findViewById(R.id.txtvalueStationListReleveStationActivity);
+            TextView txtDateReleveValue = (TextView) convertView.findViewById(R.id.txtvalueDateListReleveStationActivity);
+            TextView txtTempIntReleveValue = (TextView) convertView.findViewById(R.id.txtvalueTempIntListReleveStationActivity);
+            TextView txtTempExtReleveValue = (TextView) convertView.findViewById(R.id.txtvalueTempExtListReleveStationActivity);
+            TextView txtPressionReleveValue = (TextView) convertView.findViewById(R.id.txtvaluePressionListReleveStationActivity);
+            TextView txtLuxReleveValue = (TextView) convertView.findViewById(R.id.txtvalueLuminositeListReleveStationActivity);
+            TextView txtHygroReleveValue = (TextView) convertView.findViewById(R.id.txtvalueHygrometrieListReleveStationActivity);
+            TextView txtVitVReleveValue = (TextView) convertView.findViewById(R.id.txtvalueVitesseVentListReleveStationActivity);
+            TextView txtDivVReleveValue = (TextView) convertView.findViewById(R.id.txtvalueDirectionVentListReleveStationActivity);
 
             Releve unReleve = listeReleves.get(position);
-            txtStationReleve.setText(unReleve.getStation());
-            txtDateReleve.setText(unReleve.getQuand());
-            txtTempIntReleve.setText(unReleve.getTemp1());
-            txtTempExtReleve.setText(unReleve.getTemp2());
-            txtPressionReleve.setText(unReleve.getPressure());
-            txtLuxReleve.setText(unReleve.getLux());
-            txtHygroReleve.setText(unReleve.getHygro());
-            txtVitVReleve.setText(unReleve.getWindDir());
-            txtDivVReleve.setText(unReleve.getWindSpeed());
+
+            if (unReleve.getStation() != null) {
+                txtStationReleve.setVisibility(View.VISIBLE);
+                txtStationReleve.setText(R.string.txtStationListReleveStationActivity);
+                txtStationReleveValue.setText(unReleve.getStation());
+            } else {
+                txtStationReleve.setVisibility(View.VISIBLE);
+                txtStationReleve.setText(R.string.txtStationListReleveStationActivity);
+                txtStationReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getQuand() != null) {
+                txtDateReleve.setVisibility(View.VISIBLE);
+                txtDateReleve.setText(R.string.txtDateListReleveStationActivity);
+                txtDateReleveValue.setText(unReleve.getQuand());
+            } else {
+                txtDateReleve.setVisibility(View.VISIBLE);
+                txtDateReleve.setText(R.string.txtDateListReleveStationActivity);
+                txtDateReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getTemp1() != null) {
+                txtTempIntReleve.setVisibility(View.VISIBLE);
+                txtTempIntReleve.setText(R.string.txtTempIntListReleveStationActivity);
+                txtTempIntReleveValue.setText(unReleve.getTemp1() + " °C");
+            } else {
+                txtTempIntReleve.setVisibility(View.VISIBLE);
+                txtTempIntReleve.setText(R.string.txtTempIntListReleveStationActivity);
+                txtTempIntReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getTemp2() != null) {
+                txtTempExtReleve.setVisibility(View.VISIBLE);
+                txtTempExtReleve.setText(R.string.txtTempExtListReleveStationActivity);
+                txtTempExtReleveValue.setText(unReleve.getTemp2() + " °C");
+            } else {
+                txtTempExtReleve.setVisibility(View.VISIBLE);
+                txtTempExtReleve.setText(R.string.txtTempExtListReleveStationActivity);
+                txtTempExtReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getPressure() != null) {
+                txtPressionReleve.setVisibility(View.VISIBLE);
+                txtPressionReleve.setText(R.string.txtPressionListReleveStationActivity);
+                txtPressionReleveValue.setText(unReleve.getPressure() + " hPa");
+            } else {
+                txtPressionReleve.setVisibility(View.VISIBLE);
+                txtPressionReleve.setText(R.string.txtPressionListReleveStationActivity);
+                txtPressionReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getLux() != null) {
+                txtLuxReleve.setVisibility(View.VISIBLE);
+                txtLuxReleve.setText(R.string.txtLuminositeListReleveStationActivity);
+                txtLuxReleveValue.setText(unReleve.getLux() + " lux");
+            } else {
+                txtLuxReleve.setVisibility(View.VISIBLE);
+                txtLuxReleve.setText(R.string.txtLuminositeListReleveStationActivity);
+                txtLuxReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getHygro() != null) {
+                txtHygroReleve.setVisibility(View.VISIBLE);
+                txtHygroReleve.setText(R.string.txtHygrometrieListReleveStationActivity);
+                txtHygroReleveValue.setText(unReleve.getHygro() + " %");
+            } else {
+                txtHygroReleve.setVisibility(View.VISIBLE);
+                txtHygroReleve.setText(R.string.txtHygrometrieListReleveStationActivity);
+                txtHygroReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getWindSpeed() != null) {
+                txtVitVReleve.setVisibility(View.VISIBLE);
+                txtVitVReleve.setText(R.string.txtVitesseVentListReleveStationActivity);
+                txtVitVReleveValue.setText(unReleve.getWindSpeed() + " m/s");
+            } else {
+                txtVitVReleve.setVisibility(View.VISIBLE);
+                txtVitVReleve.setText(R.string.txtVitesseVentListReleveStationActivity);
+                txtVitVReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
+
+            if (unReleve.getWindDir() != null) {
+                txtDivVReleve.setVisibility(View.VISIBLE);
+                txtDivVReleve.setText(R.string.txtDirectionVentListReleveStationActivity);
+                txtDivVReleveValue.setText(unReleve.getWindDir() + " °");
+            } else {
+                txtDivVReleve.setVisibility(View.VISIBLE);
+                txtDivVReleve.setText(R.string.txtDirectionVentListReleveStationActivity);
+                txtDivVReleveValue.setText(R.string.txtNoDataListReleveStationActivity);
+            }
 
             return convertView;
         }

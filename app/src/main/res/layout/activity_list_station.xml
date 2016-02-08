@@ -12,7 +12,21 @@
         android:id="@+id/lvListStationActivity"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:contextClickable="false" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewFavoriListStationActivity"
+        android:layout_above="@+id/txtLibelleStationListStationActivity"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp"
+        android:contentDescription="@string/txtFavoriBtnListStationActivity"
+        android:contextClickable="false"
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/txtStationListStationActivity"
@@ -49,4 +63,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtLatitudeStationListStationActivity"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

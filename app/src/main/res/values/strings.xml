@@ -16,4 +16,7 @@
     <string name="txtHygrometrieListReleveStationActivity">Hygrométrie :</string>
     <string name="txtVitesseVentListReleveStationActivity">Vitesse du vent :</string>
     <string name="txtDirectionVentListReleveStationActivity">Direction du vent :</string>
+    <string name="txtNoDataListReleveStationActivity">Aucune donnée disponible</string>
+
+    <string name="txtFavoriBtnListStationActivity">Favori</string>
 </resources>

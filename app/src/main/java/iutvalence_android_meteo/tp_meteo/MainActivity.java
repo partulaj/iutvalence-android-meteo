@@ -1,6 +1,9 @@
 package iutvalence_android_meteo.tp_meteo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,10 +14,14 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import org.json.JSONObject;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import classes.Station;
-import worker.getStationFromJSON;
+import worker.JSONParser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -90,5 +97,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnToListStationActivity:
                 toListStationActivity(v);
         }
+    }
+
+    public class getStationFromJSON extends AsyncTask<String, String, String> {
+
+        public SharedPreferences preferences;
+        private JSONParser jsonParser = new JSONParser();
+        private static final String GET_ONE_STATION = "http://intranet.iut-valence.fr/~partulaj/MesTPs/Casir/TP-Meteo/controller/RequestController.php";
+
+        @Override
+        protected String doInBackground(String... args) {
+            preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+            List<String> params = Arrays.asList("id");
+            List<String> values = Arrays.asList(preferences.getString("preferences", "Montélimar"));
+            JSONObject json = jsonParser.makeHttpRequest(
+                    GET_ONE_STATION, params, values);
+            return json.toString();
+        }
+
     }
 }
