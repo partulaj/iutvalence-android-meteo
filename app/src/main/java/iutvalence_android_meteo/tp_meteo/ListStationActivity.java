@@ -3,7 +3,6 @@ package iutvalence_android_meteo.tp_meteo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -15,22 +14,17 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import DAO.StationDAO;
 import classes.Station;
-import worker.JSONParser;
 
 public class ListStationActivity extends AppCompatActivity {
-    public JSONArray json;
+    private JSONArray json;
     private SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,35 +49,6 @@ public class ListStationActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    public class getListStationsFromJSON extends AsyncTask<String, String, String> {
-
-        private static final String GET_STATIONS = "http://intranet.iut-valence.fr/~partulaj/MesTPs/Casir/TP-Meteo/controller/RequestController.php";
-
-        public JSONParser jsonParser = new JSONParser();
-
-        public List<Station> listeStations;
-
-        @Override
-        protected String doInBackground(String... args) {
-            Intent intent;
-            Bundle extras = new Bundle();
-
-            List<String> params = null;
-            List<String> values = null;
-
-            listeStations = null;
-            json = jsonParser.makeHttpRequestArray(GET_STATIONS, params, values);
-            return json.toString();
-        }
-
-        protected void onPostExecute(String file_url) {
-
-            if (file_url != null) {
-                Toast.makeText(ListStationActivity.this, "Liste chargée", Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 
     public class stationAdapter extends BaseAdapter {
@@ -158,28 +123,11 @@ public class ListStationActivity extends AppCompatActivity {
         }
 
         public List<Station> getStations() {
-            String monJSON = null;
-            List<Station> listeStations = new ArrayList<Station>();
-            try {
-                monJSON = new getListStationsFromJSON().execute().get();
-                if (monJSON == null) {
-                    return listeStations;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Gson unGson = new Gson();
 
-            try {
-                for (int i = 0; i <= json.length() - 1; i++) {
-                    JSONObject monObjetJSON = json.getJSONObject(i);
-                    String monStringJSON = monObjetJSON.toString();
-                    Station uneStation = unGson.fromJson(monStringJSON, Station.class);
-                    listeStations.add(uneStation);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            List<Station> listeStations = new ArrayList<Station>();
+            StationDAO stationAcces = new StationDAO(getApplicationContext());
+            listeStations = stationAcces.getAll();
+
             return listeStations;
         }
     }

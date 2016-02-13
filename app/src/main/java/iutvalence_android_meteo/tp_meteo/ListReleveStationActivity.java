@@ -11,22 +11,19 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import DAO.ReleveDAO;
 import classes.Releve;
 import worker.JSONParser;
 
 public class ListReleveStationActivity extends AppCompatActivity {
 
-    public JSONArray json;
+    private JSONArray json;
     private String monId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,7 +209,7 @@ public class ListReleveStationActivity extends AppCompatActivity {
         }
 
         public List<Releve> getReleves() {
-            String monJSON = null;
+            /*String monJSON = null;
             List<Releve> listeReleves = new ArrayList<Releve>();
             try {
                 monJSON = new getListRelevesStationFromJSON().execute().get();
@@ -234,7 +231,12 @@ public class ListReleveStationActivity extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
+
+            List<Releve> listeReleves = new ArrayList<Releve>();
+            ReleveDAO releveAcces = new ReleveDAO(getApplicationContext());
+            listeReleves = releveAcces.getAllFromStation(monId);
+
             return listeReleves;
         }
     }
