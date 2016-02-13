@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TP-Meteo</string>
     <string name="action_settings">Settings</string>
+    <string name="action_getDonnees">Mise à jour des données</string>
     <string name="txtStationMainActivity">Station :</string>
     <string name="txtLibelleStationMainActivity">Libellé :</string>
     <string name="txtLatitudeStationMainActivity">Latitude :</string>

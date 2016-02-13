@@ -22,19 +22,22 @@ public class StationDAO extends connectDAO<Station> {
     public Station get(String id) {
         Station laStation = null;
         Cursor curseur;
-        curseur = super.accesBD.getReadableDatabase().rawQuery("select id,libellé,latitude,longitude,altitude from Station where id='" + id + "';", null);
+        //curseur = super.accesBD.getReadableDatabase().rawQuery("select id,libellé,latitude,longitude,altitude from Station where id='" + id + "';", null);
+        curseur = this.accesBD.getReadableDatabase().query("station", new String[]{"id", "libellé", "latitude", "longitude", "altitude"}, "id" + " = ?", new String[]{id}, null, null, null);
         if (curseur.getCount() > 0) {
             curseur.moveToFirst();
             laStation = new Station(curseur.getString(0), curseur.getString(1), curseur.getString(2), curseur.getString(3), curseur.getString(4));
         }
+        accesBD.close();
         return laStation;
     }
 
     @Override
     public ArrayList<Station> getAll() {
         Cursor curseur;
-        String req = "select id, libellé, latitude, longitude, altitude from Station";
-        curseur = accesBD.getReadableDatabase().rawQuery(req, null);
+        //String req = "select id, libellé, latitude, longitude, altitude from Station";
+        //curseur = accesBD.getReadableDatabase().rawQuery(req, null);
+        curseur = this.accesBD.getReadableDatabase().query("station", new String[]{"id", "libellé", "latitude", "longitude", "altitude"}, null, null, null, null, null);
         return cursorToArrayList(curseur);
     }
 
@@ -50,7 +53,7 @@ public class StationDAO extends connectDAO<Station> {
             curseur.moveToNext();
 
         }
-
+        accesBD.close();
         return listeStations;
     }
 
@@ -67,6 +70,7 @@ public class StationDAO extends connectDAO<Station> {
         value.put("altitude", uneStation.getAltitude());
 
         ret = bd.insert("Station", null, value);
+        accesBD.close();
         return ret;
     }
 
@@ -74,5 +78,6 @@ public class StationDAO extends connectDAO<Station> {
     public void deleteAll() {
         SQLiteDatabase bd = super.accesBD.getWritableDatabase();
         bd.delete("Station", null, null);
+        accesBD.close();
     }
 }

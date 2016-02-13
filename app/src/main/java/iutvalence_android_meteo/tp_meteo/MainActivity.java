@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView txtValueStation, txtValueLibellé, txtValueLongitude, txtValueLatitude, txtValueAltitude;
     public SharedPreferences preferences;
     public Station maStation;
+    public updateChecker update = new updateChecker();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         StationDAO stationAcces = new StationDAO(getApplicationContext());
         preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
 
-        updateChecker update = new updateChecker();
+        //updateChecker update = new updateChecker();
         update.checkUpdate(getApplicationContext());
 
         maStation = stationAcces.get(preferences.getString("preferences", "Montélimar"));
 
-        txtValueStation = (TextView) findViewById(R.id.txtvalueStationMainActivity);
+        if (maStation != null) {
+            txtValueStation = (TextView) findViewById(R.id.txtvalueStationMainActivity);
         txtValueLibellé = (TextView) findViewById(R.id.txtvalueLibelleStationMainActivity);
         txtValueLongitude = (TextView) findViewById(R.id.txtvalueLongitudeStationMainActivity);
         txtValueLatitude = (TextView) findViewById(R.id.txtvalueLatitudeStationMainActivity);
@@ -53,7 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtValueLibellé.setText(maStation.getLibellé());
         txtValueLongitude.setText(maStation.getLongitude());
         txtValueLatitude.setText(maStation.getLatitude());
-        txtValueAltitude.setText(maStation.getAltitude());
+            txtValueAltitude.setText(maStation.getAltitude());
+        }
         super.onResume();
     }
 
@@ -79,6 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        if (id == R.id.action_getDonnees) {
+            update.forceUpdate(getApplicationContext());
+            onResume();
         }
 
         return super.onOptionsItemSelected(item);

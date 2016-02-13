@@ -27,6 +27,7 @@ public class ReleveDAO extends connectDAO<Releve> {
             curseur.moveToFirst();
             leReleve = new Releve(curseur.getString(0), curseur.getString(1), curseur.getString(2), curseur.getString(3), curseur.getString(4), curseur.getString(5), curseur.getString(6), curseur.getString(7), curseur.getString(8));
         }
+        accesBD.close();
         return leReleve;
     }
 
@@ -35,6 +36,7 @@ public class ReleveDAO extends connectDAO<Releve> {
         Cursor curseur;
         String req = "select station, quand, temp1, temp2, pressure, lux, hygro, windSpeed, windDir from Releve";
         curseur = accesBD.getReadableDatabase().rawQuery(req, null);
+        accesBD.close();
         return cursorToArrayList(curseur);
     }
 
@@ -70,6 +72,7 @@ public class ReleveDAO extends connectDAO<Releve> {
         value.put("windDir", unReleve.getWindDir());
 
         ret = bd.insert("Releve", null, value);
+        accesBD.close();
         return ret;
     }
 
@@ -77,12 +80,14 @@ public class ReleveDAO extends connectDAO<Releve> {
     public void deleteAll() {
         SQLiteDatabase bd = super.accesBD.getWritableDatabase();
         bd.delete("Releve", null, null);
+        accesBD.close();
     }
 
     public ArrayList<Releve> getAllFromStation(String station) {
         Cursor curseur;
         String req = "select station, quand, temp1, temp2, pressure, lux, hygro, windSpeed, windDir from Releve where station = '" + station + "'";
         curseur = accesBD.getReadableDatabase().rawQuery(req, null);
+        accesBD.close();
         return cursorToArrayList(curseur);
     }
 }

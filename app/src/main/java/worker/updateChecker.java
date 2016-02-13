@@ -71,4 +71,39 @@ public class updateChecker {
             }
         }
     }
+
+    public void forceUpdate(Context ct) {
+
+        String jsonStation = null;
+        String jsonReleves = null;
+        StationDAO stationAcces = new StationDAO(ct);
+        ReleveDAO releveAcces = new ReleveDAO(ct);
+
+        releveAcces.deleteAll();
+        stationAcces.deleteAll();
+        try {
+            jsonStation = new getStationsFromHTTP().execute().get();
+            JSONArray jsonArrayStations = new JSONArray(jsonStation);
+            for (int i = 0; i < jsonArrayStations.length(); i++) {
+                JSONObject jObjS = jsonArrayStations.getJSONObject(i);
+                Station maStation = new Gson().fromJson(jObjS.toString(), Station.class);
+                stationAcces.add(maStation);
+
+                jsonReleves = new getRelevesFromHTTP(maStation.getId()).execute().get();
+                JSONArray jsonArrayReleves = new JSONArray(jsonReleves);
+                for (int j = 0; j < jsonArrayReleves.length(); j++) {
+                    JSONObject jObjR = jsonArrayReleves.getJSONObject(j);
+                    Releve monReleve = new Gson().fromJson(jObjR.toString(), Releve.class);
+                    releveAcces.add(monReleve);
+                }
+
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 }
