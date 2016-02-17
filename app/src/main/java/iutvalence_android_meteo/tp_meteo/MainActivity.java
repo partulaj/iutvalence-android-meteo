@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onResume() {
-        this.getApplicationContext().deleteDatabase("AppStation");
+        //this.getApplicationContext().deleteDatabase("AppStation");
 
         StationDAO stationAcces = new StationDAO(getApplicationContext());
         preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
@@ -79,10 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
         if (id == R.id.action_getDonnees) {
             update.forceUpdate(getApplicationContext());
             onResume();

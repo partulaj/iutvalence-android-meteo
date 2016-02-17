@@ -33,13 +33,9 @@ public class updateChecker {
 
         SharedPreferences preferences = ct.getSharedPreferences("preferences", Context.MODE_PRIVATE);
 
-        Calendar dateY = Calendar.getInstance();
-        dateY.add(Calendar.DATE, -1);
+        int stbdd = preferences.getInt("dateUpdateBDD", 0);
 
-        String sty = dateY.getTime().toString().substring(0, 10);
-        String stbdd = preferences.getString("dateVersionBDD", "0").substring(0, 10);
-
-        if (!stbdd.equals(sty)) {
+        if (stbdd <= Calendar.getInstance().getTimeInMillis() - (24 * 60 * 60 * 1000)) {
             Log.d("debug", "maj non necessaire");
         } else {
             Log.d("debug", "maj");
@@ -62,6 +58,10 @@ public class updateChecker {
                     }
 
                 }
+                SharedPreferences.Editor edit = preferences.edit();
+                Calendar dateUpdate = Calendar.getInstance();
+                edit.putString("dateUpdateBDD", dateUpdate.getTime().toString());
+                edit.apply();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -98,6 +98,10 @@ public class updateChecker {
                 }
 
             }
+            SharedPreferences preferences = ct.getSharedPreferences("preferences", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = preferences.edit();
+            edit.putInt("dateUpdateBDD", (int) Calendar.getInstance().getTimeInMillis());
+            edit.apply();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

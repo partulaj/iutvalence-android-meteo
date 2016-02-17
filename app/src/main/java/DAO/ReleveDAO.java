@@ -87,7 +87,6 @@ public class ReleveDAO extends connectDAO<Releve> {
         Cursor curseur;
         String req = "select station, quand, temp1, temp2, pressure, lux, hygro, windSpeed, windDir from Releve where station = '" + station + "'";
         curseur = accesBD.getReadableDatabase().rawQuery(req, null);
-        accesBD.close();
         return cursorToArrayList(curseur);
     }
 }
